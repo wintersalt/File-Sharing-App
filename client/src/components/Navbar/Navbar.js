@@ -27,7 +27,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-auth">
-        <button className="navbar-auth__login">Login</button>
         <button className="navbar-auth__signup">Sign Up</button>
       </div>
     </div>
