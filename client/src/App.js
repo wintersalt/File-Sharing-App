@@ -1,10 +1,15 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
+import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
-import Footer from "./components/Footer/Footer";
 
 function App() {
+  useEffect(() => {
+    console.log(process.env.REACT_APP_TRANNY)
+  }, [])
+
   return (
     <>
       <Navbar />
