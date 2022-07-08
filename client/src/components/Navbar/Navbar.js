@@ -1,8 +1,23 @@
-import { signIn } from "../../firebase";
+import { signInWithPopup } from "firebase/auth";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
+import { auth, provider } from "../../firebase";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { currentUser, dispatch } = useContext(AuthContext);
+
+  const signInWithGoogle = async () => {
+    signInWithPopup(auth, provider).then((result) => {
+      const user = result.user;
+
+      localStorage.setItem("ws-share-user", JSON.stringify(user));
+
+      dispatch({ type: "LOGIN", payload: user });
+    });
+  };
+
   return (
     <div className="navbar">
       <div className="navbar-logo">
@@ -16,20 +31,24 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">Find</Link>
+            <Link to="/find">Find</Link>
           </li>
           <li>
-            <Link to="/">FAQ</Link>
+            <Link to="/faq">FAQ</Link>
           </li>
           <li>
-            <Link to="/">Terms</Link>
+            <Link to="/terms">Terms</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-auth">
-        <button className="navbar-auth__signup" onClick={signIn}>
-          Sign In
-        </button>
+        {currentUser ? (
+          <Link to="/profile">Profile</Link>
+        ) : (
+          <button className="navbar-auth__signup" onClick={signInWithGoogle}>
+            Sign In
+          </button>
+        )}
       </div>
     </div>
   );
