@@ -8,7 +8,7 @@ import "./Navbar.css";
 const Navbar = () => {
   const { currentUser, dispatch } = useContext(AuthContext);
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
 
@@ -29,9 +29,6 @@ const Navbar = () => {
         <ul>
           <li>
             <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/find">Find</Link>
           </li>
           <li>
             <Link to="/faq">FAQ</Link>
