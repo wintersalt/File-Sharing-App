@@ -1,15 +1,22 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import TransfersSvg from "../assets/transfers.svg";
+import EncryptSvg from "../assets/encrypt.svg";
 import { Link } from "react-router-dom";
 import { TiCloudStorage } from "react-icons/ti";
 import { AiFillFileText } from "react-icons/ai";
 import { IoSettingsSharp } from "react-icons/io5";
-import Footer from "../components/Footer/Footer";
-import TransfersSvg from "../assets/transfers.svg";
-import EncryptSvg from "../assets/encrypt.svg";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div className="home">
+    <motion.div
+      className="home"
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}  
+    >
       <div className="home-container">
         <div className="home-container__text">
           <h1>Free Cloud-Based</h1>
@@ -88,7 +95,7 @@ const Home = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
