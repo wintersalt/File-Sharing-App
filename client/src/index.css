@@ -227,3 +227,60 @@ a {
 .faq-container__item:hover {
   box-shadow: 0px 0px 26px -4px rgba(78, 87, 96, 0.5);
 }
+
+/* AUTH PAGES STYLES */
+.auth {
+  display: flex;
+}
+
+.auth h1 {
+  margin-bottom: 1.8rem;
+}
+
+.auth form {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 15px;
+  margin: auto;
+}
+
+.auth label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.auth span {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.auth input {
+  padding: 0 1rem;
+  border: 1px solid #cccccc;
+  background: transparent;
+  height: 45px;
+  border-radius: 5px;
+  width: 360px;
+  outline: none;
+}
+
+.auth input[type="submit"] {
+  background: #54cf5a;
+  cursor: pointer;
+  border: none;
+  margin-top: 0.3rem;
+  margin-bottom: 1.3rem;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+
+.auth__suggestion {
+  font-weight: 300;
+}
+
+.auth__suggestion a {
+  text-decoration: underline;
+}

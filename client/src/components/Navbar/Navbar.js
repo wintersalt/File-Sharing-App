@@ -23,7 +23,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-auth">
-        <Link to="/">Sign Up</Link>
+        <Link to="/login">Sign In</Link>
       </div>
     </div>
   );
