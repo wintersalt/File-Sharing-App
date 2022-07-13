@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { TiCloudStorage } from "react-icons/ti";
 import { AiFillFileText } from "react-icons/ai";
 import { IoSettingsSharp } from "react-icons/io5";
+import Footer from "../components/Footer/Footer";
 import TransfersSvg from "../assets/transfers.svg";
 import EncryptSvg from "../assets/encrypt.svg";
 
@@ -86,6 +87,7 @@ const Home = () => {
           <img src={EncryptSvg} alt="Transfers svg" />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

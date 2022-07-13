@@ -1,23 +1,7 @@
-import { signInWithPopup } from "firebase/auth";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
-import { auth, provider } from "../../firebase";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { currentUser, dispatch } = useContext(AuthContext);
-
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {
-      const user = result.user;
-
-      localStorage.setItem("ws-share-user", JSON.stringify(user));
-
-      dispatch({ type: "LOGIN", payload: user });
-    });
-  };
-
   return (
     <div className="navbar">
       <div className="navbar-logo">
@@ -39,13 +23,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-auth">
-        {currentUser ? (
-          <Link to="/profile">Profile</Link>
-        ) : (
-          <button className="navbar-auth__signup" onClick={signInWithGoogle}>
-            Sign In
-          </button>
-        )}
+        <Link to="/">Sign Up</Link>
       </div>
     </div>
   );
