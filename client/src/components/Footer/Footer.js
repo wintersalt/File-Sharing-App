@@ -11,10 +11,10 @@ const Footer = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">FAQ</Link>
+          <Link to="/faq">FAQ</Link>
         </li>
         <li>
-          <Link to="/">Terms</Link>
+          <Link to="/terms">Terms</Link>
         </li>
       </ul>
       <p>© 2022 WS Share, Inc. All rights reserved</p>
